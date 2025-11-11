@@ -1,3 +1,14 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "pandas>=2.3.3",
+#     "plotly>=6.4.0",
+# ]
+#
+# [tool.marimo.display]
+# theme = "system"
+# # ///
+
 """Marimo notebook illustrating i^x in the complex plane."""
 
 import marimo
