@@ -1,0 +1,15 @@
+[project]
+name = "python-marimo"
+version = "0.1.0"
+description = "playground for experimenting with the `marimo` library"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "marimo[mcp]>=0.17.7",
+    "matplotlib>=3.10.7",
+    "numpy>=2.3.4",
+    "pandas>=2.3.3",
+    "plotly>=6.4.0",
+    "pyzmq>=27.1.0",
+    "ruff>=0.14.4",
+]
