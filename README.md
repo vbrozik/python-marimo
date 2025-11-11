@@ -9,8 +9,8 @@ First install `uv` then install `marimo`:
 ``` bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-git clone https://github.com/vbrozik/marimo-playground.git
-cd marimo-playground
+git clone https://github.com/vbrozik/python-marimo.git
+cd python-marimo
 uv sync
 source .venv/bin/activate
 ```
