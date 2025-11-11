@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.11"
 # dependencies = [
@@ -112,7 +113,8 @@ def _(go, mo, np, x_slider):
     theme = mo.app_meta().theme
     # Note: The value probably fails when the notebook is set to use the system theme.
     # See: https://gemini.google.com/share/9c6b606ebdeb
-    theme = 'dark'
+    # theme = 'dark'
+    # theme = 'light'
     plotly_template = 'plotly_dark' if theme == 'dark' else 'plotly'
 
     # Create the plot
