@@ -13,3 +13,4 @@ wheels/
 .specstory/
 __marimo__/
 ntt/
+.vscode/bookmarks.json
