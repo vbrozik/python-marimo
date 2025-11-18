@@ -10,6 +10,16 @@ dependencies = [
     "numpy>=2.3.4",
     "pandas>=2.3.3",
     "plotly>=6.4.0",
+    "polars>=1.35.2",
     "pyzmq>=27.1.0",
-    "ruff>=0.14.4",
+    "ruff>=0.14.5",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "plotly-stubs>=0.0.6",
+    "pylint>=4.0.3",
+    "pytest>=9.0.1",
+    "ruff>=0.14.5",
 ]
