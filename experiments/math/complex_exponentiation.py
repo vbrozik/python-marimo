@@ -8,18 +8,19 @@
 #
 # [tool.marimo.display]
 # theme = "system"
-# # ///
+# ///
 
 """Marimo notebook illustrating i^x in the complex plane."""
 
 import marimo
+
 
 __generated_with = "0.17.7"
 app = marimo.App(width="medium")
 
 
 @app.cell
-def _():
+def _import_libraries():
     """Import required libraries."""
     import marimo as mo
     import numpy as np
@@ -28,31 +29,31 @@ def _():
 
 
 @app.cell
-def _(mo):
-    """Create interactive slider for the exponent."""
+def _show_math_background(mo) -> None:
+    """Show the mathematical background."""
     mo.md(
         r"""
         # Exponentiating the Imaginary Unit: $i^x$
 
-        This notebook explores the behavior of $i^x$ where $i$ is the imaginary unit ($\sqrt{-1}$) 
+        This notebook explores the behavior of $i^x$ where $i$ is the imaginary unit ($\sqrt{-1}$)
         and $x$ is a real number.
 
         ## Mathematical Background
 
         Using Euler's formula, we can express $i$ as:
-    
+
         $$
         i = e^{iπ/2}
         $$
 
         Therefore:
-    
+
         $$
         i^x = (e^{iπ/2})^x = e^{iπx/2}
         $$
 
         Using Euler's formula again: $e^{iθ} = cos(θ) + i·sin(θ)$, we get:
-    
+
         $$
         i^x = cos(πx/2) + i·sin(πx/2)
         $$
@@ -62,11 +63,10 @@ def _(mo):
         ## Interactive graph
         """
     )
-    return
 
 
 @app.cell
-def _(mo):
+def _create_slider_step(mo):
     """Create slider for setting the step size of the exponent slider."""
     x_slider_step = mo.ui.slider(
         start=0.01,
@@ -81,7 +81,7 @@ def _(mo):
 
 
 @app.cell
-def _(mo, x_slider_step):
+def _create_exponent_slider(mo, x_slider_step):
     """Create slider for $x$ value."""
     x_slider = mo.ui.slider(
         start=-4.0,
@@ -98,7 +98,7 @@ def _(mo, x_slider_step):
 
 
 @app.cell
-def _(go, mo, np, x_slider):
+def _visualize_complex_exponentiation(go, mo, np, x_slider) -> None:
     """Compute and visualize $i^x$ in the complex plane."""
     # Get current x value
     x_current = x_slider.value
@@ -220,11 +220,10 @@ def _(go, mo, np, x_slider):
     )
 
     mo.vstack([fig, result_text])
-    return
 
 
 @app.cell
-def _(mo):
+def _show_additional_explanation(mo) -> None:
     """Additional explanation."""
     mo.md(
         """
@@ -241,10 +240,10 @@ def _(mo):
            - When x is an even integer: i^x = ±1 (real values)
            - When x is an odd integer: i^x = ±i (purely imaginary values)
 
-        5. **Continuous Path**: As x varies continuously, i^x traces a continuous path on the unit circle.
+        5. **Continuous Path**: As x varies continuously, i^x traces a continuous path
+           on the unit circle.
         """
     )
-    return
 
 
 if __name__ == "__main__":
