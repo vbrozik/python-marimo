@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.11"
-# dependencies = [
-#     "pandas>=2.3.3",
-#     "plotly>=6.4.0",
-# ]
 #
 # [tool.marimo.display]
-# theme = "system"
+# #theme = "system"
 # ///
 
 """Marimo notebook illustrating i^x in the complex plane."""
+
+from __future__ import annotations
 
 import marimo
 
@@ -86,7 +84,6 @@ def _create_exponent_slider(mo, x_slider_step):
     x_slider = mo.ui.slider(
         start=-4.0,
         stop=4.0,
-        # step=0.1,
         step=x_slider_step.value,
         value=0.0,
         label="Exponent $x$:",
@@ -101,16 +98,16 @@ def _create_exponent_slider(mo, x_slider_step):
 def _visualize_complex_exponentiation(go, mo, np, x_slider) -> None:
     """Compute and visualize $i^x$ in the complex plane."""
     # Get current x value
-    x_current = x_slider.value
+    x_current: float = x_slider.value
 
     # Compute i^x for the current value
     # i^x = e^(i*pi*x/2) = cos(pi*x/2) + i*sin(pi*x/2)
-    angle = np.pi * x_current / 2
-    result_real = np.cos(angle)
-    result_imag = np.sin(angle)
+    angle: float = np.pi * x_current / 2
+    result_real: float = np.cos(angle)
+    result_imag: float = np.sin(angle)
 
     # Detect notebook theme and set Plotly template
-    theme = mo.app_meta().theme
+    theme: str = mo.app_meta().theme
     # Note: The value probably fails when the notebook is set to use the system theme.
     # See: https://gemini.google.com/share/9c6b606ebdeb
     # theme = 'dark'
@@ -118,11 +115,11 @@ def _visualize_complex_exponentiation(go, mo, np, x_slider) -> None:
     plotly_template = 'plotly_dark' if theme == 'dark' else 'plotly'
 
     # Create the plot
-    fig = go.Figure()
+    figure = go.Figure()
 
     # Add the unit circle
-    circle_theta = np.linspace(0, 2*np.pi, 100)
-    fig.add_trace(go.Scatter(
+    circle_theta = np.linspace(0, 2 * np.pi, 100)
+    figure.add_trace(go.Scatter(
         x=np.cos(circle_theta),
         y=np.sin(circle_theta),
         mode='lines',
@@ -147,7 +144,7 @@ def _visualize_complex_exponentiation(go, mo, np, x_slider) -> None:
     # ))
 
     # Add the current point i^x
-    fig.add_trace(go.Scatter(
+    figure.add_trace(go.Scatter(
         x=[result_real],
         y=[result_imag],
         mode='markers+text',
@@ -159,7 +156,7 @@ def _visualize_complex_exponentiation(go, mo, np, x_slider) -> None:
     ))
 
     # Add vector from origin to current point
-    fig.add_trace(go.Scatter(
+    figure.add_trace(go.Scatter(
         x=[0, result_real],
         y=[0, result_imag],
         mode='lines',
@@ -185,7 +182,7 @@ def _visualize_complex_exponentiation(go, mo, np, x_slider) -> None:
     # ))
 
     # Update layout
-    fig.update_layout(
+    figure.update_layout(
         title=f'i^x in the Complex Plane (x = {x_current:.2f})',
         xaxis_title='Real Part',
         yaxis_title='Imaginary Part',
@@ -219,7 +216,7 @@ def _visualize_complex_exponentiation(go, mo, np, x_slider) -> None:
         """
     )
 
-    mo.vstack([fig, result_text])
+    mo.vstack([figure, result_text])
 
 
 @app.cell
