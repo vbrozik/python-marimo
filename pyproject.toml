@@ -5,6 +5,7 @@ description = "playground for experimenting with the `marimo` library"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "altair[all]>=6.0.0",
     "marimo[mcp]>=0.17.7",
     "matplotlib>=3.10.7",
     "numpy>=2.3.4",
