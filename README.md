@@ -25,5 +25,5 @@ marimo run experiments/math/complex_exponentiation.py
 
 ## Interesting Experiments Online
 
-* [Complex Exponentiation](experiments/math/complex_exponentiation.py): Explore the properties of complex exponentiation using `marimo`.
-  * <https://marimo.app/gh/vbrozik/python-marimo/main?entrypoint=experiments%2Fmath%2Fcomplex_exponentiation.py>
+* [Complex Exponentiation](src/notebooks/experiments/math/complex_exponentiation.py): Explore the properties of complex exponentiation using `marimo`.
+  * <https://marimo.app/gh/vbrozik/python-marimo/main?entrypoint=src%2Fnotebooks%2Fexperiments%2Fmath%2Fcomplex_exponentiation.py>
