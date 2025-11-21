@@ -18,12 +18,23 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "marimo[mcp]>=0.17.8",
     "mypy>=1.18.2",
     "plotly-stubs>=0.0.6",
     "pylint>=4.0.3",
     "pytest>=9.0.1",
+    "python-lsp-server>=1.13.2",
     "ruff>=0.14.5",
 ]
+
+[tool.marimo.formatting]
+line_length = 100
+
+[tool.marimo.display]
+default_width = "full"
+
+[tool.marimo.runtime]
+pythonpath = ["./src"]
 
 [tool.pylint.main]
 py-version = "3.14"
