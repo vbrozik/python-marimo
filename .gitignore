@@ -14,3 +14,4 @@ wheels/
 __marimo__/
 ntt/
 .vscode/bookmarks.json
+/exports/
