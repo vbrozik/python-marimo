@@ -2,9 +2,13 @@
     "cSpell.words": [
         "addopts",
         "hovermode",
+        "iptools",
+        "lalr",
         "lightgray",
         "localzone",
         "metafunc",
+        "mlxlink",
+        "plip",
         "pycodestyle",
         "pyflakes",
         "pytestconfig",
@@ -15,5 +19,7 @@
         "showlegend",
         "textposition",
         "toplevel"
-    ]
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }

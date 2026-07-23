@@ -1,0 +1,18 @@
+version = "0.2"
+language = "en"
+
+[[overrides]]
+filename = "**/pyproject.toml"
+dictionaries = ["python"]
+
+[[patterns]]
+name = "python-escape-unicode"
+pattern = [
+    '\\u[0-9A-Fa-f]{4}',
+    '\\U[0-9A-Fa-f]{8}',
+    '\\x[0-9A-Fa-f]{2}',
+]
+
+[[languageSettings]]
+languageId = "python"
+ignoreRegExpList = ["python-escape-unicode"]

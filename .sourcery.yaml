@@ -1,0 +1,7 @@
+# sourcery.yaml
+# https://docs.sourcery.ai/References/Legacy-Configuration/sourcery-yaml/
+
+rule_settings:
+  python_version: '3.14'
+  disable:
+    - inline-immediately-returned-variable

@@ -14,4 +14,10 @@ wheels/
 __marimo__/
 ntt/
 .vscode/bookmarks.json
+.vscode/tmstate.json
 /exports/
+/tmp/
+
+# configuration files
+*.env
+!*.default.env
