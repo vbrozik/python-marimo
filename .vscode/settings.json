@@ -14,11 +14,14 @@
         "pytestconfig",
         "pythonpath",
         "pyupgrade",
+        "rechunk",
         "scaleanchor",
         "scaleratio",
         "showlegend",
+        "TCPIP",
         "textposition",
-        "toplevel"
+        "toplevel",
+        "wigglystuff"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true

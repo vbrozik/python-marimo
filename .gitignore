@@ -17,6 +17,7 @@ ntt/
 .vscode/tmstate.json
 /exports/
 /tmp/
+/.agents/skills/marimo-pair/tmp/
 
 # configuration files
 *.env

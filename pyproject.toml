@@ -23,6 +23,7 @@ dependencies = [
     "pytest>=9.0.2",
     "pyzmq>=27.1.0",
     "tzlocal>=5.3.1",
+    "wigglystuff>=0.5.26",
 ]
 
 [dependency-groups]
@@ -79,6 +80,7 @@ disable = [
     "useless-return",
     # other settings
     "no-else-raise",            # do not prevent using elif
+    "superfluous-parens",       # allow superfluous parentheses in expressions
 ]
 
 [tool.pyright]
